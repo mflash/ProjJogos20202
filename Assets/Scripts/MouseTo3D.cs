@@ -10,10 +10,12 @@ public class MouseTo3D : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow);
         RaycastHit rayCastInfo;
-        if(Physics.Raycast(ray, out rayCastInfo)) {
+        if (Physics.Raycast(ray, out rayCastInfo))
+        {
             GameObject obj = rayCastInfo.transform.gameObject;
-            print(obj.name + " - " + rayCastInfo.point);
-            if(obj.tag == "cubos" && Input.GetMouseButton(0)) {
+            // print(obj.name + " - " + rayCastInfo.point);
+            if (obj.tag == "cubos" && Input.GetMouseButton(0))
+            {
                 Renderer r = obj.GetComponent<Renderer>();
                 r.material.color = Color.gray;
             }
