@@ -33,8 +33,8 @@ public class MoveTowards : MonoBehaviour
 
     void OnGUI()
     {
-        string dist = string.Format("{0:f4}",
-            Vector3.Distance(transform.position,target.position));
-        // GUI.Label(new Rect(10, 10, 100, 20), dist);
+        float dist = Vector3.Distance(transform.position,target.position);
+        GUI.Label(new Rect(10, 10, 100, 20), $"{dist:f2}");
+        GUI.Label(new Rect(10, 30, 100, 20), $"{transform.position}");
     }
 }
