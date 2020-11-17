@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject target;
+    private Material mat;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -12,12 +14,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        mat = target.GetComponent<Renderer>().material;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Clicked()
     {
-
+        print("Botão pressionado!");
+        mat.color = new Color(Random.value, Random.value, Random.value);
     }
 }
